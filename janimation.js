@@ -81,13 +81,16 @@
   }
 
   $.fn.removeAnimation = function(){
-    this.css(j_PRE_fix+"animation-name","");
-    this.css(j_PRE_fix+"animation-duration","");
-    this.css(j_PRE_fix+"animation-timing-function","");
-    this.css(j_PRE_fix+"animation-delay","");
-    this.css(j_PRE_fix+"animation-iteration-count","");
-    this.css(j_PRE_fix+"animation-fill-mode","");
-    this.css(j_PRE_fix+"animation-direction","");
+    var cssObj = {};
+    cssObj[j_PRE_fix+"animation-duration"] = "";
+    cssObj[j_PRE_fix+"animation-timing-function"] = "";
+    cssObj[j_PRE_fix+"animation-delay"] = "";
+    cssObj[j_PRE_fix+"animation-iteration-count"] = "";
+    cssObj[j_PRE_fix+"animation-fill-mode"] = "";
+    cssObj[j_PRE_fix+"animation-direction"] = "";
+    cssObj[j_PRE_fix+"animation-name"] = "";
+    cssObj[j_PRE_fix+"transform"] = "";
+    this.css(cssObj);
     
     if(j_PRE_fix == ""){
       this[0].style["transition"] = "";
@@ -96,6 +99,5 @@
       temp = temp.substring(0,1).toUpperCase()+temp.substring(1);
       this[0].style[temp+"Transition"] = "";
     }
-    this.css(j_PRE_fix+"transform","");
   }
 })( jQuery, window, document );
