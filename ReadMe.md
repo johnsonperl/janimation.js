@@ -30,3 +30,11 @@
 #### 清除animation、transition和transform
 > `$(selector).removeAnimation()` ，但是不清除修改过的其他css属性，比如 width、height、opacity等
 
+### 使用方法
+``` html
+<script src="调用 jQuery 文件"></script>
+<script src="https://raw.githubusercontent.com/johnsonperl/janimation.js/master/janimation.js"></script>
+<script>
+$("div").j_animation({name:"fadeInLeft"});
+</script>
+```
