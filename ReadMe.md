@@ -29,11 +29,13 @@
 
 #### 清除animation、transition和transform
 > `$(selector).removeAnimation()` ，但是不清除修改过的其他css属性，比如 width、height、opacity等
+> 推荐使用国外某人做的[CSS3 动画库](http://daneden.github.io/animate.css/ "CSS3 动画库")
 
 ### 使用方法
 ``` html
 <script src="调用 jQuery 文件"></script>
 <script src="https://raw.githubusercontent.com/johnsonperl/janimation.js/master/janimation.js"></script>
+<link href="http://daneden.github.io/animate.css/" rel="stylesheet">
 <script>
 $("div").j_animation({name:"fadeInLeft"});
 </script>
