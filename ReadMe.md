@@ -5,7 +5,7 @@
 **使用该文件前，必须知道 css3 中 transform、transition 和 animation 的区别**
 
 #### 控制 transform，不含过渡效果
-> `$(selector).j_animation({x:"50px",y:"50px",scale:"2.0",rotate:"45deg"})` 
+> `$(selector).j_transform({x:"50px",y:"50px",scale:"2.0",rotate:"45deg"})` 
 
 > 默认值是 {x:0,y:0,scale:1,rotate:"0deg"}
 
