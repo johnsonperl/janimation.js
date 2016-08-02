@@ -28,7 +28,7 @@
 > `name` 就是 animation-name，其他参数很明显。不清楚的话，就需要先了解 css3 的 animation 的参数的含义。
 
 #### 清除animation、transition和transform
-> `$(selector).removeAllAnimation()` ，但是不清除修改过的其他css属性，比如 width、height、opacity等
+> `$(selector).removeAnimation()` ，但是不清除修改过的其他css属性，比如 width、height、opacity等
 
 > 推荐使用国外某人做的[CSS3 动画库](http://daneden.github.io/animate.css/ "CSS3 动画库")，当然大神可以自己来写效果，对了，大神肯定有更好的工具，求推荐！！！
 

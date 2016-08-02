@@ -80,7 +80,7 @@
     }
   }
 
-  $.fn.removeAllAnimation = function(){
+  $.fn.removeAnimation = function(){
     var cssObj = {};
     cssObj[j_PRE_fix+"animation-duration"] = "";
     cssObj[j_PRE_fix+"animation-timing-function"] = "";
