@@ -80,27 +80,29 @@
     }
   }
 
-  $.fn.removeAnimation = function(){
-    var cssObj = {};
-    cssObj[j_PRE_fix+"animation-duration"] = "";
-    cssObj[j_PRE_fix+"animation-timing-function"] = "";
-    cssObj[j_PRE_fix+"animation-delay"] = "";
-    cssObj[j_PRE_fix+"animation-iteration-count"] = "";
-    cssObj[j_PRE_fix+"animation-fill-mode"] = "";
-    cssObj[j_PRE_fix+"animation-direction"] = "";
-    cssObj[j_PRE_fix+"animation-name"] = "";
-    cssObj[j_PRE_fix+"transform"] = "";
-    this.css(cssObj);
-    
-    this.removeTransition()
-  }
-  $.fn.removeTransition = function(){ 
-    if(j_PRE_fix == ""){
-      this[0].style["transition"] = "";
-    }else{
-      var temp = j_PRE_fix.replace(/\-/g,"");
-      temp = temp.substring(0,1).toUpperCase()+temp.substring(1);
-      this[0].style[temp+"Transition"] = "";
-    }
-  }
+  	$.fn.removeAnimation = function(){
+		var cssObj = {};
+		cssObj[j_PRE_fix+"animation-duration"] = "";
+		cssObj[j_PRE_fix+"animation-timing-function"] = "";
+		cssObj[j_PRE_fix+"animation-delay"] = "";
+		cssObj[j_PRE_fix+"animation-iteration-count"] = "";
+		cssObj[j_PRE_fix+"animation-fill-mode"] = "";
+		cssObj[j_PRE_fix+"animation-direction"] = "";
+		cssObj[j_PRE_fix+"animation-name"] = "";
+		cssObj[j_PRE_fix+"transform"] = "";
+		this.css(cssObj);
+
+		this.removeTransition()
+  	}
+  	$.fn.removeTransition = function(){ 
+  		$(this).each(function(){
+  			if(j_PRE_fix == ""){
+	      			$(this)[0].style["transition"] = "";
+	    		}else{
+	      			var temp = j_PRE_fix.replace(/\-/g,"");
+	      			temp = temp.substring(0,1).toUpperCase()+temp.substring(1);
+	      			$(this)[0].style[temp+"Transition"] = "";
+	    		}
+  		})
+  	}
 })( jQuery, window, document );
