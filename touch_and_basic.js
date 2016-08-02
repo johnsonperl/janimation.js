@@ -1,3 +1,7 @@
+//下面两行根据浏览器设定字体大小，站内使用rem控制字体大小
+var html = document.documentElement;
+html.style.fontSize = html.clientWidth+"px";
+
 var sys = {};
 //绑定touch事件
 sys.inittouch = function(id) {
