@@ -36,12 +36,7 @@
 #### CSS3 动画
 > 推荐使用国外某人做的[CSS3 动画库](http://daneden.github.io/animate.css/ "CSS3 动画库")，当然大神可以自己来写效果，对了，大神肯定有更好的工具，求推荐！！！
 
-#### 使用方法
-``` html
-<script src="调用 jQuery 文件"></script>
-<script src="https://raw.githubusercontent.com/johnsonperl/janimation.js/master/janimation.js"></script>
-<link href="http://daneden.github.io/animate.css/" rel="stylesheet">
-<script>
-$("div").j_animation({name:"fadeInLeft"});
-</script>
-```
+#### DEMO演示
+[我们公司的一个H5](https://github.com/johnsonperl/css3-animation-example "")
+
+![CSS3 Animation Example](http://m.ibyersh.com/zt/2016/zhaop/1470900882.png "")
