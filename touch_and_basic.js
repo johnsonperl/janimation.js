@@ -26,6 +26,7 @@ sys.ts = function(e) {
 	sys.startY = e.touches[0].pageY;
 	sys.startX = e.touches[0].pageX;
 	sys.yInit = ahk.step * ahk.h;
+	$(".section").removeTransition();
 }
 //touch move
 sys.tm = function(e) {
