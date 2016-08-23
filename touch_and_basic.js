@@ -38,7 +38,7 @@ sys.tm = function(e) {
 
 	if (sys.startY > sys.endY) {
 		if(ahk.step == $(".section").length -1){
-			$("#section_"+ahk.step).j_transform({y:(-sys.yInit - dis)+"px"})
+			//$("#section_"+ahk.step).j_transform({y:(-sys.yInit - dis)+"px"})
 		}else{
 			$("#section_"+(ahk.step+1)).j_transform({y:(-sys.yInit - dis)+"px"})
 		}
