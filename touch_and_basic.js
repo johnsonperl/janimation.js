@@ -108,6 +108,9 @@ sys.playMusic = function(){
 sys.tips = function(){
 	$(".tips").j_animation({name:"fadeInUp",duration:"1s",timingFunc:"cubic-bezier(0.24, 0.5, 0.26, 0.8)",iteration:"infinite"})
 }
+sys.stopTips = function(){
+	$(".tips").removeAnimation();
+}
 //判断是不是wechat内置浏览器
 sys.isWeixinBrowser = function(){
   var ua = navigator.userAgent.toLowerCase();
