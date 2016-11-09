@@ -68,27 +68,54 @@ sys.te = function() {
 //手指往下滑，切换场景
 sys.movedown = function(){
 	if(ahk.step > 0 && Math.abs(sys.startY - sys.endY) > 20){
-		var tp = ahk.step;
-		$("#section_"+tp).j_transition({timingFunc:"cubic-bezier(0.04, 1.01, 0.18, 0.96)",duration:"0.4s"});
-		$("#section_"+tp).j_transform({y:0})
-		ahk.step--;
-		ahk.scene();
+		sys.preScene()
 	}else{
-		$("#section_"+ahk.step).j_transition({timingFunc:"cubic-bezier(0.04, 1.01, 0.18, 0.96)",duration:"0.4s"});
-		$("#section_"+ahk.step).j_transform({y:(-ahk.h * ahk.step)+"px"})
+		sys.thisScene()
 	}
 }
 //手指往上滑，切换场景
 sys.moveup = function(){
 	if(ahk.step < ahk.size -1 && Math.abs(sys.startY - sys.endY) > 20){
-		ahk.step++;
-		$("#section_"+ahk.step).j_transition({timingFunc:"cubic-bezier(0.04, 1.01, 0.18, 0.96)",duration:"0.4s"});
-		$("#section_"+ahk.step).j_transform({y:(-ahk.h * ahk.step)+"px"})
-		ahk.scene();
+		sys.nextScene()
 	}else{
-		$("#section_"+ahk.step).j_transition({timingFunc:"cubic-bezier(0.04, 1.01, 0.18, 0.96)",duration:"0.4s"});
-		$("#section_"+ahk.step).j_transform({y:(-ahk.h * ahk.step)+"px"})
+		sys.thisScene()
 	}
+}
+
+sys.thisScene = function(){
+	$("#section_"+ahk.step).j_transition({timingFunc:"cubic-bezier(0.04, 1.01, 0.18, 0.96)",duration:"0.4s"});
+	$("#section_"+ahk.step).j_transform({y:(-ahk.h * ahk.step)+"px"})
+}
+
+sys.nextScene = function(){
+	if(ahk.step >= ahk.size - 1){
+		return;
+	}
+	ahk.step++;
+	$("#section_" + ahk.step).j_transition({
+		timingFunc: "cubic-bezier(0.04, 1.01, 0.18, 0.96)",
+		duration: "0.4s"
+	});
+	$("#section_" + ahk.step).j_transform({
+		y: (-ahk.h * ahk.step) + "px"
+	})
+	ahk.scene();
+}
+
+sys.preScene = function(){
+	if(ahk.step == 0){
+		return
+	}
+	var tp = ahk.step;
+	$("#section_" + tp).j_transition({
+		timingFunc: "cubic-bezier(0.04, 1.01, 0.18, 0.96)",
+		duration: "0.4s"
+	});
+	$("#section_" + tp).j_transform({
+		y: 0
+	})
+	ahk.step--;
+	ahk.scene();
 }
 //播放和暂停音乐
 sys.playMusic = function(){
